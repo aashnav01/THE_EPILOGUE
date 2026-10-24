@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+
+# Full site kept locally until the reveal. Never push (repo is public).
+_full-site-backup
