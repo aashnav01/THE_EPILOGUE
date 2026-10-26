@@ -6,6 +6,7 @@ export const NAV_LINKS = [
   { id: 'events', label: 'Events' },
   { id: 'schedule', label: 'Schedule' },
   { id: 'registrations', label: 'Register' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export function Navigation() {
@@ -44,6 +45,7 @@ export function Navigation() {
       <div className="nav__inner">
         <a className="nav__brand" href="#home" onClick={() => setOpen(false)}>
           <span className="nav__brand-name">{SITE.name}</span>
+          <span className="nav__brand-date">{SITE.eventDateShort}</span>
         </a>
         <button
           ref={toggleRef}

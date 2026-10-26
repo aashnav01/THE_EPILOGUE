@@ -1,27 +1,11 @@
 import { SITE } from '../data/site';
 import { Star } from './Star';
 
-/** A poster-shaped placeholder: the real poster stays hidden until the reveal. */
-function PosterTease() {
-  return (
-    <div
-      className="tease"
-      role="img"
-      aria-label={`The poster is a secret until the reveal on ${SITE.revealDateLong}.`}
-    >
-      <div className="tease__inner" aria-hidden="true">
-        <Star className="tease__star tease__star--1 twinkle" />
-        <Star className="tease__star tease__star--2 twinkle" />
-        <span className="tease__q">?</span>
-        <p className="tease__label">Poster reveal</p>
-        <p className="tease__date">{SITE.revealDateShort}</p>
-      </div>
-      <span className="tease__hint" aria-hidden="true">Coming soon</span>
-    </div>
-  );
+interface HeroProps {
+  revealed: boolean;
 }
 
-export function Hero() {
+export function Hero({ revealed }: HeroProps) {
   return (
     <section id="home" className="hero" aria-labelledby="hero-title">
       <Star className="deco hero__star hero__star--1 twinkle" />
@@ -29,28 +13,25 @@ export function Hero() {
 
       <div className="hero__inner wrap">
         <div className="hero__copy">
-          <p className="eyebrow">Stay tuned</p>
+          <p className="eyebrow">{revealed ? 'Welcome to' : 'Coming soon'}</p>
           <h1 id="hero-title" className="hero__title">
             <span className="hero__title-line">Paradigm</span>
             <span className="hero__title-line">Meet 2.0</span>
           </h1>
-
           <dl className="hero__facts">
+            {!revealed && (
+              <div>
+                <dt>Poster reveal</dt>
+                <dd>{SITE.revealDateShort}</dd>
+              </div>
+            )}
             <div>
-              <dt>Poster reveal</dt>
-              <dd>{SITE.revealDateShort}</dd>
-            </div>
-            <div>
-              <dt>Event details</dt>
-              <dd>Coming soon</dd>
+              <dt>Event date</dt>
+              <dd>{SITE.eventDateShort}</dd>
             </div>
           </dl>
 
-          <p className="hero__tagline">Big news is on the way</p>
-        </div>
-
-        <div className="hero__poster">
-          <PosterTease />
+          {revealed && <p className="hero__tagline">The poster is here!</p>}
         </div>
       </div>
 

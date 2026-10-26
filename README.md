@@ -1,7 +1,6 @@
-# Paradigm Meet 2.0 — coming-soon site
+# Paradigm Meet 2.0
 
-A teaser page: the name, a poster-reveal countdown, and "Coming soon" for everything else.
-Built with React + Vite + TypeScript. No UI libraries, no backend.
+An event site built with React, Vite, and TypeScript. Before the configured reveal time, the poster, event overview, and schedule stay hidden behind placeholders. Registration forms and contact information are available at all times. At and after the reveal time, the poster, event overview, and schedule appear.
 
 ## Run it
 
@@ -17,18 +16,32 @@ npm run typecheck  # optional TypeScript check
 
 To test on your phone, run `npm run dev -- --host` and open the "Network" URL on a phone connected to the same Wi-Fi.
 
-## Change the poster-reveal date or time
+## Configure the poster reveal
 
-Open **`src/data/site.ts`** and edit `posterReveal`. It is an absolute time in IST, so it is correct on any phone in any timezone:
+Open **`src/data/site.ts`**. `posterReveal` is the actual moment the site switches from the pre-reveal page to the revealed page. It controls the countdown and when the poster, event overview, and schedule become visible. Registration forms remain available before and after the reveal. Enter an ISO timestamp with an explicit timezone offset. For India, use `+05:30`:
 
 ```ts
-posterReveal: '2026-10-26T00:00:00+05:30',   // 26 Oct 2026, 12:00 AM IST
-// e.g. 6 PM instead:  '2026-10-26T18:00:00+05:30'
+posterReveal: '2026-10-26T14:00:00+05:30', // 26 October 2026, 2:00 PM IST
 ```
 
-The same file holds the display date (`revealDateLong`, `revealDateShort`) and the text of each "Coming soon" section.
+Update `revealDateLong` and `revealDateShort` in the same file to match `posterReveal`. These two fields only control the human-readable date shown in the pre-reveal countdown; they do not set or trigger the reveal. `eventDateLong` and `eventDateShort` are the event date, which is separate from the reveal date.
 
-To preview what visitors see once the countdown hits zero, add `?now=` to the URL, e.g. `?now=2026-10-26T00:00:00%2B05:30`.
+### Preview the two states
+
+`previewNow` is a testing override for the clock. It pretends the current time is the timestamp you enter, so you can check either page state without changing the real `posterReveal` setting:
+
+```ts
+previewNow: '2026-10-26T13:59:00+05:30', // before reveal: placeholders
+```
+
+Use a timestamp earlier than `posterReveal` to see the pre-reveal page; use one at or later than `posterReveal` to see the poster, event overview, and schedule. Registrations remain visible in both states. Set `previewNow` back to `null` when finished so the site uses each visitor's real clock.
+
+You can also preview without editing the file by adding `?now=` to the URL. For example:
+
+- Before reveal: `?now=2026-10-26T13:59:00%2B05:30`
+- After reveal: `?now=2026-10-26T14:00:01%2B05:30`
+
+The URL override takes priority over `previewNow`. `previewNow` and `?now=` are only for previewing; neither changes the actual reveal date. After the reveal, the poster is available to tap/click to view larger.
 
 ## The full site
 

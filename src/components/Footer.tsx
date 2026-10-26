@@ -14,7 +14,7 @@ export function Footer() {
             <p className="footer__series">Stay tuned</p>
           </div>
         </div>
-        <p className="footer__meta">Poster reveal · {SITE.revealDateLong}</p>
+        <p className="footer__meta">Event date · {SITE.eventDateLong}</p>
         <nav aria-label="Footer">
           <ul className="footer__nav">
             {NAV_LINKS.map((l) => (
