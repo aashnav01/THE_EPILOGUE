@@ -6,7 +6,6 @@ export const NAV_LINKS = [
   { id: 'events', label: 'Events' },
   { id: 'schedule', label: 'Schedule' },
   { id: 'registrations', label: 'Register' },
-  { id: 'info', label: 'Info' },
 ];
 
 export function Navigation() {

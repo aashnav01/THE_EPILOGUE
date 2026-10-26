@@ -27,5 +27,5 @@ export const COMING_SOON_SECTIONS: ComingSoonSection[] = [
   { id: 'events', title: 'Events', text: 'The line-up is on its way. Stay tuned!', tone: 'orange' },
   { id: 'schedule', title: 'Schedule', text: 'The full timeline will be shared soon.', tone: 'dark' },
   { id: 'registrations', title: 'Registrations', text: 'Sign-ups will open soon. Keep an eye on this page.', tone: 'orange' },
-  { id: 'info', title: 'Event Info', text: 'Date, venue and all the details will be announced soon.', tone: 'cream' },
 ];
+
