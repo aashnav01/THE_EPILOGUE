@@ -6,13 +6,13 @@ export const SITE = {
   name: 'Paradigm Meet 2.0',
   eventDateLong: '30 October 2026',
   eventDateShort: '30 OCT 2026',
-  revealDateLong: '26 October 2026 at 10:00 PM IST',
-  revealDateShort: '26 OCT 2026 · 10:00 PM IST',
+  revealDateLong: '27 October 2026 at 11:00 AM IST',
+  revealDateShort: '27 OCT 2026 · 11:00 AM IST',
   /**
    * Actual reveal instant; event content appears when the visitor's clock
    * reaches this timestamp. Include the correct UTC offset for the event timezone.
    */
-  posterReveal: '2026-10-26T22:30:00+05:30',
+  posterReveal: '2026-10-27T11:00:00+05:30',
   /** Testing-only clock override. Set to null to use the visitor's real clock. */
   previewNow: null as string | null,
 };
