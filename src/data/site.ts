@@ -77,7 +77,7 @@ export const REGISTRATIONS: RegistrationEntry[] = [
   {
     id: 'talent-show',
     name: 'Talent Show',
-    description: 'Register to showcase your talent on stage!',
+    description: 'Register to showcase your talent on stage! (Duration: 2 mins)',
     url: 'https://docs.google.com/forms/d/e/1FAIpQLScyUTdq4ZLuv1UV3vTtRs-3OJULXPw7rn6-fDtv3zrEuS-hEQ/viewform?usp=publish-editor',
   },
 ];
