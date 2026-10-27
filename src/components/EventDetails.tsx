@@ -1,11 +1,16 @@
 import { Star } from './Star';
 
-const ACTIVITIES = [
-  'Trivia',
-  'Mentor Games',
-  'Sports',
-  'Stalls',
-  'Speeches',
+interface Activity {
+  name: string;
+  featured?: boolean;
+}
+
+const ACTIVITIES: Activity[] = [
+  { name: 'Trivia' },
+  { name: 'Mentor Games' },
+  { name: 'Sports' },
+  { name: 'Talent Show', featured: true },
+  { name: 'Speeches' },
 ];
 
 export function EventsOverview() {
@@ -16,10 +21,11 @@ export function EventsOverview() {
           <h2 id="events-title" className="section__title">Events</h2>
         </header>
         <div className="activity-grid">
-          {ACTIVITIES.map((name) => (
-            <article className="activity-card" key={name}>
+          {ACTIVITIES.map((a) => (
+            <article className={`activity-card${a.featured ? ' activity-card--featured' : ''}`} key={a.name}>
               <Star className="activity-card__star twinkle" />
-              <h3 className="activity-card__name">{name}</h3>
+              {a.featured && <span className="activity-card__badge">✦ NEW</span>}
+              <h3 className="activity-card__name">{a.name}</h3>
             </article>
           ))}
         </div>
