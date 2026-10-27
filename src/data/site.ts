@@ -41,7 +41,7 @@ export const TIMELINE: TimelineEntry[] = [
   { time: '10:00–10:30 AM', activity: 'Inauguration and live prayer song', location: 'Auditorium' },
   { time: '10:30–11:15 AM', activity: 'Trivia competition', location: 'Auditorium' },
   { time: '11:15 AM–12:15 PM', activity: 'Mentor Games', location: 'Designated playing area' },
-  { time: '11:15 AM–1:30 PM', activity: 'Stalls open', location: 'Stall area' },
+  { time: '11:15 AM–1:30 PM', activity: 'Stalls open and Sports', location: 'Stall area and Sports ground' },
   { time: '1:30–2:30 PM', activity: 'Lunch for everyone; stalls closed', location: 'Designated dining area' },
   { time: '2:30–3:00 PM', activity: 'Stalls reopen', location: 'Stall area' },
   { time: '3:00–4:30 PM', activity: 'Epilogue', location: 'Auditorium' },
