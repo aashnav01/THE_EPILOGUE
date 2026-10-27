@@ -38,7 +38,7 @@ export interface TimelineEntry {
 
 /** The day-of schedule. Times are as supplied — do not reorder or edit silently. */
 export const TIMELINE: TimelineEntry[] = [
-  { time: '10:00–10:30 AM', activity: 'Inauguration, lamp lighting, and live prayer song', location: 'Auditorium' },
+  { time: '10:00–10:30 AM', activity: 'Inauguration and live prayer song', location: 'Auditorium' },
   { time: '10:30–11:15 AM', activity: 'Trivia competition', location: 'Auditorium' },
   { time: '11:15 AM–12:15 PM', activity: 'Mentor Games', location: 'Designated playing area' },
   { time: '11:15 AM–1:30 PM', activity: 'Stalls open', location: 'Stall area' },
