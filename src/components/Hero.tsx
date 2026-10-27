@@ -15,8 +15,8 @@ export function Hero({ revealed }: HeroProps) {
         <div className="hero__copy">
           <p className="eyebrow">{revealed ? 'Welcome to' : 'Coming soon'}</p>
           <h1 id="hero-title" className="hero__title">
-            <span className="hero__title-line">Paradigm</span>
-            <span className="hero__title-line">Meet 2.0</span>
+            <span className="hero__title-line">The</span>
+            <span className="hero__title-line">Epilogue</span>
           </h1>
           <dl className="hero__facts">
             {!revealed && (
