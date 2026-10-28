@@ -207,6 +207,56 @@ ul, ol { padding: 0; list-style: none; }
   transform: rotate(-2deg); transform-origin: center;
 }
 .hero__title-line { display: block; font-size: clamp(3.4rem, 19vw, 8rem); text-shadow: 6px 7px 0 var(--black); }
+
+.hero__title-wrap { position: relative; display: inline-block; }
+.hero__insta {
+  position: absolute; top: -0.6rem; right: -1.2rem;
+  transform: translateX(100%) rotate(2deg);
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--f-display); font-weight: 400; font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem);
+  letter-spacing: 0.05em; text-decoration: none; text-transform: none; white-space: nowrap;
+  padding: 0.6rem 1.3rem 0.55rem;
+  border: 3px solid var(--gold);
+  border-radius: 10px 4px 12px 4px;
+  box-shadow:
+    0 0 20px rgba(255, 214, 107, 0.5),
+    0 0 40px rgba(255, 214, 107, 0.15),
+    5px 5px 0 var(--cream);
+  animation: insta-glow 3s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 3;
+}
+.hero__insta::before {
+  content: '✦';
+  position: absolute; top: -10px; left: -8px;
+  font-size: 1rem; color: var(--gold);
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+.hero__insta::after {
+  content: '✦';
+  position: absolute; bottom: -8px; right: -6px;
+  font-size: 0.75rem; color: var(--cream);
+  animation: badge-pulse 2s ease-in-out infinite 0.6s;
+}
+.hero__insta:hover {
+  transform: translateX(100%) rotate(0deg) scale(1.08);
+  box-shadow:
+    0 0 32px rgba(255, 214, 107, 0.7),
+    0 0 60px rgba(255, 214, 107, 0.25),
+    5px 5px 0 var(--cream);
+}
+.hero__insta-icon { width: 1.3em; height: 1.3em; flex-shrink: 0; color: var(--gold); }
+
+@media (max-width: 959px) {
+  .hero__insta {
+    position: relative; top: auto; right: auto;
+    transform: rotate(1deg);
+    margin-top: 1rem;
+  }
+  .hero__insta:hover { transform: rotate(0deg) scale(1.08); }
+}
 @media (min-width: 960px) {
   .hero__title-line { font-size: clamp(6.5rem, 11vw, 10rem); }
   .hero__copy { gap: 0.35rem; }
@@ -581,6 +631,10 @@ ul, ol { padding: 0; list-style: none; }
 @keyframes badge-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.08); }
+}
+@keyframes insta-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 214, 107, 0.5), 0 0 40px rgba(255, 214, 107, 0.15), 5px 5px 0 var(--cream); }
+  50% { box-shadow: 0 0 34px rgba(255, 214, 107, 0.75), 0 0 60px rgba(255, 214, 107, 0.3), 5px 5px 0 var(--cream); }
 }
 
 @media (prefers-reduced-motion: reduce) {
