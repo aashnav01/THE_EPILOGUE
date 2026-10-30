@@ -10,7 +10,7 @@ const ACTIVITIES: Activity[] = [
   { name: 'Mentor Games' },
   { name: 'Sports' },
   { name: 'Talent Show', featured: true },
-  { name: 'Speeches' },
+  { name: 'The Epilogue' },
 ];
 
 export function EventsOverview() {
