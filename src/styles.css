@@ -1234,6 +1234,62 @@ ol {
   animation: highlight-pulse 3s ease-in-out infinite;
 }
 
+/* Completed events — greyed out */
+.timeline__row--done {
+  background: rgba(29, 29, 36, 0.5);
+  border-color: rgba(255, 248, 234, 0.18);
+  box-shadow: 3px 3px 0 rgba(255, 75, 11, 0.2);
+  opacity: 0.45;
+}
+
+.timeline__row--done .timeline__time {
+  color: rgba(255, 227, 160, 0.5);
+}
+
+.timeline__row--done .timeline__activity {
+  color: rgba(255, 248, 234, 0.5);
+}
+
+.timeline__row--done .timeline__location {
+  color: rgba(255, 214, 107, 0.4);
+}
+
+.timeline__row--done .timeline__star {
+  opacity: 0.25;
+}
+
+/* Currently live event — vibrant pulsing highlight */
+.timeline__row--live {
+  background: linear-gradient(135deg, #1b2a14 0%, #2a4a1a 40%, #1a3a0a 100%);
+  border-color: #6dff6d;
+  border-width: var(--line-thick);
+  box-shadow: 0 0 22px rgba(109, 255, 109, 0.35), 5px 5px 0 rgba(109, 255, 109, 0.6);
+  animation: live-pulse 2.5s ease-in-out infinite;
+}
+
+.timeline__row--live .timeline__time {
+  color: #6dff6d;
+}
+
+@keyframes live-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 18px rgba(109, 255, 109, 0.3), 5px 5px 0 rgba(109, 255, 109, 0.55);
+  }
+
+  50% {
+    box-shadow: 0 0 34px rgba(109, 255, 109, 0.55), 5px 5px 0 rgba(109, 255, 109, 0.7);
+  }
+}
+
+/* LIVE badge */
+.timeline__badge--live {
+  background: #22c55e;
+  color: #fff;
+  animation: badge-pulse 1.5s ease-in-out infinite;
+}
+
 .timeline__badge {
   position: absolute;
   top: -14px;
@@ -1281,13 +1337,7 @@ ol {
 
 @media (min-width: 720px) {
   .timeline__row {
-    grid-template-columns: 11rem 1fr auto;
-    align-items: center;
-    gap: 1.2rem;
-  }
-
-  .timeline__row {
-    grid-template-columns: 14.5rem 1fr auto;
+    grid-template-columns: 12.5rem 1fr auto;
     align-items: center;
     gap: 1.2rem;
   }
